@@ -1,39 +1,28 @@
 for(let i=0; i<100; i++){
     let a;
+    let color;
     if (i==0){
         console.log(i+1);
         a=i+1;
+        color = 'black';
     } else if ((i+1)%3==0 && (i+1)%5==0){
         console.log('FizzBuzz');
         a='FizzBuzz';
+        color='blue';
     } else if ((i + 1)%3==0 && (i + 1)%5!=0){
         console.log('Fizz');
         a='Fizz';
+        color='red';
     } else if ((i + 1)%3!=0 && (i + 1)%5==0){
         console.log('Buzz');
         a='Buzz';
+        color='green';
     }
     else{
         console.log(i + 1);
         a=i+1;
-    }
-    
-    document.getElementById('main').insertAdjacentHTML('beforebegin', `<div id="${i+1}"> nella riga ${i + 1} appare il valore: ${a}</div>`);
-
-    if (i==0){
-        document.getElementById(`${i + 1}`).style.color = "black";
-
-    } else if ((i+1)%3==0 && (i+1)%5==0){
-        document.getElementById(`${i + 1}`).style.color = "blue";
-
-    } else if ((i + 1)%3==0 && (i + 1)%5!=0){
-        document.getElementById(`${i + 1}`).style.color = "red";
-
-    } else if ((i + 1)%3!=0 && (i + 1)%5==0){
-        document.getElementById(`${i + 1}`).style.color = "green";
-
-    } else{
-        document.getElementById(`${i + 1}`).style.color = "black";
+        color='black'
     }
 
+    document.getElementById('main').insertAdjacentHTML('beforebegin', `<div class="${color}"> nella riga ${i + 1} appare il valore: ${a}</div>`);
 }
